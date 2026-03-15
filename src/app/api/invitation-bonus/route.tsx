@@ -14,7 +14,7 @@ export const GET = async () => {
       include: { claimedRewards: true },
     });
 
-    const rewards = await db.invitationRewareds.findMany({ where: {} });
+    const rewards = await db.invitationRewards.findMany({ where: {} });
 
     const userRewards = rewards.map((reward) => {
       const newReward = { ...reward, completedReferral: 0, isClamed: false };
